@@ -3,8 +3,7 @@ module Asbo
   class SvnNewFiles
   
     def initialize
-      svn_status = `svn status --xml`
-      p svn_status
+      @svn_new_files = %x[svn status].map { |line| line =~ %r{^\?} ? line.delete('?').lstrip.chomp : nil }.compact
     end
   
     def to_hash
