@@ -13,5 +13,3 @@ module Asbo
   end
   
 end
-
-p Asbo::SvnNewFiles.new.to_hash
