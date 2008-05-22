@@ -67,7 +67,7 @@ namespace 'asbo' do
     
     Dir.glob(File.join('tmp', 'asbo', '*.yml')).each do |filename|
       working_set = YAML.load(File.open(filename))
-      working_set['svn_diff_md5'] = current_working_set['svn_diff_md5']
+      working_set['svn_diff_md5'] = Asbo::svn_diff_md5
       File.open(filename, 'w') { |file| file.puts(working_set.to_yaml) }
     end
   end
