@@ -63,7 +63,7 @@ namespace 'asbo' do
     end
     abort errors.join("\n") unless errors.empty?
     
-    # *** actually commit to subversion here ***
+    puts `svn commit`
     
     Dir.glob(File.join('tmp', 'asbo', '*.yml')).each do |filename|
       working_set = YAML.load(File.open(filename))
