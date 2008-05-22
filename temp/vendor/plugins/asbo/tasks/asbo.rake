@@ -1,9 +1,5 @@
 require 'rubygems'
 require 'rake'
-require 'rake/testtask'
-require 'rexml/document'
-require 'digest/md5'
-require 'yaml'
 
 Rake::Task['test:units'].enhance do
   Asbo::tests_passed('test:units')
@@ -33,6 +29,7 @@ module Asbo
     def svn_base_revision
       svn_log = `svn log --revision BASE --xml`
       abort "Warning: unable to execute 'svn log'." unless $?.success?
+      require 'rexml/document'
       document = REXML::Document.new(svn_log)
       Integer(document.elements['/log/logentry'].attributes['revision'])
     end
@@ -40,6 +37,7 @@ module Asbo
     def svn_diff_md5
       svn_diff = `svn diff`
       abort "Warning: unable to execute 'svn diff'." unless $?.success?
+      require 'digest/md5'
       Digest::MD5.hexdigest(svn_diff)
     end
     
@@ -50,6 +48,7 @@ end
 namespace 'asbo' do
 
   task 'commit' do
+    require 'yaml'
     current_working_set = { 'svn_base_revision' => Asbo::svn_base_revision, 'svn_diff_md5' => Asbo::svn_diff_md5 }
     errors = []
     Dir.glob(File.join('tmp', 'asbo', '*.yml')).each do |filename|
