@@ -5,6 +5,8 @@ require 'optparse'
 
 module Asbo
   
+  TEST_TASKS = %w(test:units test:functionals test:integration)
+  
   class << self
     
     def tests_passed(task_name)
@@ -29,16 +31,21 @@ module Asbo
     end
     
     def pre_commit
-      current_working_set = { 'svn_base_revision' => Asbo::svn_base_revision, 'svn_diff_md5' => Asbo::svn_diff_md5 }
       errors = []
-      Dir.glob(File.join('tmp', 'asbo', '*.yml')).each do |filename|
-        working_set = YAML.load(File.open(filename))
-        test_task = File.basename(filename, ".yml").gsub(/-/, ':')
-        unless current_working_set['svn_base_revision'] == working_set['svn_base_revision']
-          errors << "#{test_task} has not been run successfully since the last svn update."
+      current_svn_base_revision = svn_base_revision
+      TEST_TASKS.each do |task_name|
+        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
+        stored_svn_base_revision = YAML.load(File.open(filename))['svn_base_revision'] rescue nil
+        unless stored_svn_base_revision == current_svn_base_revision
+          errors << "#{task_name} has not been run successfully since the last svn update."
         end
-        unless current_working_set['svn_diff_md5'] == working_set['svn_diff_md5']
-          errors << "#{test_task} has not been run successfully since the last local modification."
+      end
+      current_svn_diff_md5 = svn_diff_md5
+      TEST_TASKS.each do |task_name|
+        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
+        stored_svn_diff_md5 = YAML.load(File.open(filename))['svn_diff_md5'] rescue nil
+        unless stored_svn_diff_md5 == current_svn_diff_md5
+          errors << "#{task_name} has not been run successfully since the last local modification."
         end
       end
       abort errors.join("\n") unless errors.empty?
