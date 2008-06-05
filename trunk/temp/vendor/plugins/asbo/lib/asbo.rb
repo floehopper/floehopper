@@ -32,22 +32,8 @@ module Asbo
     
     def pre_commit
       errors = []
-      current_svn_base_revision = svn_base_revision
-      TEST_TASKS.each do |task_name|
-        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
-        stored_svn_base_revision = YAML.load(File.open(filename))['svn_base_revision'] rescue nil
-        unless stored_svn_base_revision == current_svn_base_revision
-          errors << "#{task_name} has not been run successfully since the last svn update."
-        end
-      end
-      current_svn_diff_md5 = svn_diff_md5
-      TEST_TASKS.each do |task_name|
-        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
-        stored_svn_diff_md5 = YAML.load(File.open(filename))['svn_diff_md5'] rescue nil
-        unless stored_svn_diff_md5 == current_svn_diff_md5
-          errors << "#{task_name} has not been run successfully since the last local modification."
-        end
-      end
+      svn_base_revision_check(errors)
+      svn_diff_md5_check(errors)
       abort errors.join("\n") unless errors.empty?
     end
     
@@ -73,6 +59,30 @@ module Asbo
         working_set = YAML.load(File.open(filename))
         working_set['svn_diff_md5'] = Asbo::svn_diff_md5
         File.open(filename, 'w') { |file| file.puts(working_set.to_yaml) }
+      end
+    end
+    
+    private
+    
+    def svn_base_revision_check(errors)
+      current_svn_base_revision = svn_base_revision
+      TEST_TASKS.each do |task_name|
+        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
+        stored_svn_base_revision = YAML.load(File.open(filename))['svn_base_revision'] rescue nil
+        unless stored_svn_base_revision == current_svn_base_revision
+          errors << "#{task_name} has not been run successfully since the last svn update."
+        end
+      end
+    end
+    
+    def svn_diff_md5_check(errors)
+      current_svn_diff_md5 = svn_diff_md5
+      TEST_TASKS.each do |task_name|
+        filename = File.join('tmp', 'asbo', "#{task_name.gsub(/:/, '-')}.yml")
+        stored_svn_diff_md5 = YAML.load(File.open(filename))['svn_diff_md5'] rescue nil
+        unless stored_svn_diff_md5 == current_svn_diff_md5
+          errors << "#{task_name} has not been run successfully since the last local modification."
+        end
       end
     end
     
