@@ -34,11 +34,12 @@ module Asbo
       errors = []
       Dir.glob(File.join('tmp', 'asbo', '*.yml')).each do |filename|
         working_set = YAML.load(File.open(filename))
+        test_task = File.basename(filename, ".yml").gsub(/-/, ':')
         unless current_working_set['svn_base_revision'] == working_set['svn_base_revision']
-          errors << "svn_base_revisions differ for #{filename}"
+          errors << "#{test_task} has not been run successfully since the last svn update."
         end
         unless current_working_set['svn_diff_md5'] == working_set['svn_diff_md5']
-          errors << "svn_diff_md5s differ for #{filename}"
+          errors << "#{test_task} has not been run successfully since the last local modification."
         end
       end
       abort errors.join("\n") unless errors.empty?
