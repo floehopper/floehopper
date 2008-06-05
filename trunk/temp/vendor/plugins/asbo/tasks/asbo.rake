@@ -1,6 +1,8 @@
 require 'rake'
 
-%w(test:units test:functionals test:integration).each do |name|
+require File.join(File.dirname(__FILE__), '..', 'lib', 'asbo')
+
+Asbo::TEST_TASKS.each do |name|
   task(name).enhance do
     Asbo::tests_passed(name)
   end
