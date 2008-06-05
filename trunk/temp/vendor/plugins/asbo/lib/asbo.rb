@@ -3,7 +3,6 @@ require 'digest/md5'
 require 'yaml'
 require 'optparse'
 
-
 module Asbo
   
   class << self
