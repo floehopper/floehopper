@@ -1,0 +1,15 @@
+---
+title:  People
+filter:
+  - erb
+  - textile
+---
+h2. <%= @page.title %>
+
+* *"Dr. Wayne Smith":http://www.dur.ac.uk/psychology/staff/?id=5824*<br />Title: "Sensory storage of spatio-temporal objects: sequences, signs and facial expressions":http://tinyurl.com/67mmd6<br />Start date: October 2007<br />Funding: "ESRC":http://www.esrc.ac.uk/<br />In collaboration with: "Prof. John Mollon":http://vision.psychol.cam.ac.uk/jdmollon/
+
+* *"Mr. Robert Lee":http://www.dur.ac.uk/psychology/staff/?id=5061*<br />Title: "Cortical Colour Processing in Normal Individuals" (PhD)<br />Start date: October 2006<br />Funding: Durham Doctoral Fellowship Scheme
+
+* *"Ms. Laura Young":http://www.dur.ac.uk/physics/staff/profiles/?id=5648*<br />Title: "Astronomical Adaptive Optics Technology and its Application to Human Vision Research" (PhD)<br />Start date: October 2007<br />Funding: "PPARC / STFC":http://www.scitech.ac.uk/ studentship<br />Co-supervisors: "Dr. Richard Myers":http://www.dur.ac.uk/physics/staff/profiles/?id=546 (Physics); "Dr. Gordon Love":http://www.dur.ac.uk/physics/staff/profiles/?id=246 (Physics)
+
+* *Mr. Tudor Popescu*<br />Title: "The Plasticity of the Auditory System" (MRes)<br />Start date: January 2008<br />Funding: Self-funded
