@@ -43,6 +43,12 @@ filter:    erb
        <br />
        <li><%= link_to_page_unless_current(@pages.find(:filename => 'people')) %></li>
      </ul>
+     <% if @page.name == 'publications' %>
+     <br />
+     <span id='badgeCont843308' style='width:126px'>
+       <script src='http://labs.researcherid.com/mashlets?el=badgeCont843308&mashlet=badge&showTitle=false&className=a&rid=C-3218-2008'></script>
+     </span>
+     <% end %>
    </div>
      
    <div class="column span-15 append-2 last" id="content">
