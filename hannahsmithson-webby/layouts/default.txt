@@ -42,6 +42,8 @@ filter:    erb
        <li><%= link_to_page_unless_current(@pages.find(:filename => 'presentations')) %></li>
        <br />
        <li><%= link_to_page_unless_current(@pages.find(:filename => 'people')) %></li>
+       <br />
+       <li><%= link_to_page_unless_current(@pages.find(:filename => 'links')) %></li>
      </ul>
      <% if @page.name == 'publications' %>
      <br />
