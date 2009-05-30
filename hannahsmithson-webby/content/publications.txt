@@ -7,6 +7,8 @@ filter:
 
 h2. Publications
 
+* *The effect of notched noise on flicker detection and discrimination.*<br />Smithson HE, Henning GB, MacLeod DIA & Stockman A (2009).<br />"Journal of Vision, 9(5):21, 1-18":http://journalofvision.org/9/5/21/ |  "pdf":/research-papers/SmithsonHenningMacLeodStockman_2009_Flicker.pdf
+
 * *The loss of the PDE6 deactivating enzyme, RGS9, results in precocious light adaptation at low light levels.*<br />Stockman A, Smithson HE, Webster AR, Holder GE, Rana NA, Ripamonti C & Sharpe LT (2008).<br />"Journal of Vision, 8 (1):10, 1-10":http://journalofvision.org/8/1/10/ |  "pdf":/research-papers/StockmanSmithsonWebsterHolderRanaRipamontiSharpe_2008_BradyopsiaRGS9.pdf
 
 * *Residual cone vision without a-transducin.*<br />Stockman A, Smithson HE, Michaelides M, Moore AT, Webster AR & Sharpe LT (2007).<br />"Journal of Vision, 7 (4):8, 1-13":http://journalofvision.org/7/4/8/ |  "pdf":/research-papers/StockmanSmithsonMichaelidesMooreWebsterSharpe_2007_AlphaTransducin.pdf
