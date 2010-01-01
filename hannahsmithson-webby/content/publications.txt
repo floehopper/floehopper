@@ -39,6 +39,8 @@ h2. Publications
 
 h2. Meeting Reports
 
+* *Guest Editors’ Foreword: Proceedings of the 19th Biennial Symposium of the International Colour Vision Society. Held July 2007 Belém, Brazil.*<br />Silveira LCL, Smithson HE, Ventura DF & Lee BB (2003)<br />Visual Neuroscience, 25 (3): 229-229 | "pdf":/meeting-reports/Smithson_2008_ICVS.pdf
+
 * *Meeting Report: The Fall Vision Meeting, 2002.*<br />Smithson HE (2003)<br />Color Research and Application, 28 (5): 393-395 | "pdf":/meeting-reports/Smithson_2002_FVM.pdf
 
 * *Meeting Report: The Rank Prize Funds Symposium, 1999.*<br />Smithson HE (2000)<br />Color Research and Application, 25 (4): 309-311 | "pdf":/meeting-reports/Smithson_2000_Rank.pdf
