@@ -7,6 +7,8 @@ filter:
 
 h2. Published Abstracts
 
+* *The role of stimulus history in colour constancy.*<br />Smithson HE (2009).<br />"Journal of Vision, 9(14):9, 9a":http://journalofvision.org/9/14/9/
+
 * *Adaptation of central colour channels.*<br />Lee RJ, Mollon JD, Zaidi Q & Smithson HE (2007).<br />"Perception, 36, ECVP Abstract Supplement":http://www.perceptionweb.com/abstract.cgi?id=v070285
 
 * *Colour slew-rate: chromatic pathways are limited by a maximum rate at which they can signal changes in colour.*<br />Stockman A, Smithson HE, Aboshiha J, West P & Ripamonti C (2007).<br />"Perception, 36, ECVP Abstract Supplement":http://www.perceptionweb.com/abstract.cgi?id=v070255
